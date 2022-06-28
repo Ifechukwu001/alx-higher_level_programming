@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 for i in range(10):
     for j in range(10):
-        print(f"{i:d}{j:d}", end="")
+        print("{:d}{:d}".format(i, j), end="")
         if i == 9 and j == 9:
-            print("")
+            end_char = "\n"
         else:
-            print(", ", end="")
+            end_char = ", "
+        print(end_char, end="")
