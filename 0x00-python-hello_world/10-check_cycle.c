@@ -7,7 +7,7 @@
  */
 int check_cycle(listint_t *list)
 {
-	size_t bufsize = 2, i, elem = 0;
+	size_t bufsize = 1, i, elem = 0;
 	listint_t **buffer = malloc(bufsize * sizeof(listint_t*));
 	listint_t *current = list;
 
@@ -26,7 +26,7 @@ int check_cycle(listint_t *list)
 		}
 		if (elem == bufsize)
 		{
-			bufsize += 2;
+			bufsize += 1;
 			buffer = realloc(buffer, bufsize * sizeof(listint_t*));
 		}
 		buffer[elem] = current;
