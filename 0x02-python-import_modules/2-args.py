@@ -8,7 +8,7 @@ if __name__ == "__main__":
     endl = ":"
     if argc == 1:
         endl = "."
-    elif argv == 2:
+    elif argc == 2:
         suffix = "argument"
 
     if argc == 1:
