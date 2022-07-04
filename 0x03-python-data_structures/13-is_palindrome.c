@@ -23,6 +23,8 @@ int is_palindrome(listint_t **head)
 			end = end->next;
 		if (current->n == end->n)
 		{
+			if (current == end)
+				break;
 			current = current->next;
 			elem_no -= 2;
 		}
