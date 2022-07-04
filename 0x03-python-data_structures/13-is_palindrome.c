@@ -5,6 +5,8 @@ int is_palindrome(listint_t **head)
 	listint_t *current, *end;
 	int i, elem_no = 0;
 
+	if (head == NULL)
+		return (0);
 	current = *head;
 	while (current)
 	{
