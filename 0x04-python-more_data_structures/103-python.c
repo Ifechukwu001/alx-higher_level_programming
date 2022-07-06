@@ -19,7 +19,7 @@ void print_python_list(PyObject *p)
 		allocated = list->allocated;
 		printf("[*] Allocated = %d", (int)allocated);
 
-		for (i = 0; list->ob_item[i] != NULL; i++)
+		for (i = 0; i < (int)list_size; i++)
 		{
 			type = list->ob_item[i]->ob_type->tp_name;
 			printf("Element %d: %s\n", i, type);
