@@ -49,7 +49,7 @@ void print_python_bytes(PyObject *p)
 		if (byte_size >= 10)
 			limit = 10;
 		else
-			limit = size + 1;
+			limit = byte_size + 1;
 		
 		printf("first %lu bytes:", limit);
 		for (i = 0; i < limit; i++)
