@@ -34,6 +34,7 @@ void print_python_bytes(PyObject *p)
 {
 	Py_ssize_t byte_size, limit;
 	char *test_str;
+	PyBytesObject *obj;
 	int i;
 
 	if (PyBytes_Check(p))
@@ -54,7 +55,11 @@ void print_python_bytes(PyObject *p)
 		printf("first %lu bytes:", limit);
 		for (i = 0; i < limit; i++)
 		{
-			printf(" %2x", ((PyBytesObject *)p)->ob_sval[i]);
+			obj = (PyBytesObject *)p;
+			if (obj->sval[i] >= 0)
+				printf(" %02x", obj->sval[i]);
+			else
+				printf(" %02x", 256 + obj->sval[i]);
 		}
 		putchar('\n');
 	}
