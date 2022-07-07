@@ -56,10 +56,10 @@ void print_python_bytes(PyObject *p)
 		for (i = 0; i < limit; i++)
 		{
 			obj = (PyBytesObject *)p;
-			if (obj->sval[i] >= 0)
-				printf(" %02x", obj->sval[i]);
+			if (obj->ob_sval[i] >= 0)
+				printf(" %02x", obj->ob_sval[i]);
 			else
-				printf(" %02x", 256 + obj->sval[i]);
+				printf(" %02x", 256 + obj->ob_sval[i]);
 		}
 		putchar('\n');
 	}
