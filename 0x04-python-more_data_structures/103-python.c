@@ -30,7 +30,32 @@ void print_python_list(PyObject *p)
 }
 
 
-void print_python_bytes(PyObject *p __attribute__((unused)))
+void print_python_bytes(PyObject *p)
 {
-	
+	Py_ssize_t byte_size, limit;
+	char *test_str;
+	int i;
+
+	if (PyBytes_Check(p))
+	{
+		printf("[.] bytes object info\n");
+
+		byte_size = PyBytes_Size(p);
+		printf("size: %d\n", (int)byte_size);
+
+		test_str = PyBytes_AsString(p);
+		printf("trying string: %s\n", test_str);
+
+		if (byte_size >= 10)
+			limit = 10;
+		else
+			limit = size + 1;
+		
+		printf("first %lu bytes:", limit);
+		for (i = 0; i < limit; i++)
+		{
+			printf(" %2x", ((PyBytesObject *)p)->ob_sval[i]);
+		}
+		putchar('\n');
+	}
 }
