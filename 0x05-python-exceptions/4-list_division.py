@@ -1,0 +1,21 @@
+#!/usr/bin/python3
+def list_division(my_list_1, my_list_2, list_length):
+    """ Divides a list by another """
+    div_list = []
+    for idx in range(list_length):
+        try:
+            a = my_list_1[idx]
+            b = my_list_2[idx]
+            result = a / b
+        except IndexError:
+            print("out of range")
+            result = 0
+        except TypeError:
+            print("wrong type")
+            result = 0
+        except ZeroDivisionError:
+            print("division by 0")
+            result = 0
+        finally:
+            div_list.append(result)
+    return div_list
