@@ -2,7 +2,7 @@
 class Square:
     """ Square class with setter to private feild """
     def __init__(self, size=0):
-        pass
+        self.size_s = size
 
     @property
     def size_s(self):
