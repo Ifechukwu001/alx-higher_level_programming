@@ -2,9 +2,11 @@
 """A module containing a Square class.
 
 """
+
+
 class Square:
     """Square class with setter to private feild.
-       
+
     Attributes:
         size (int): Width of the square.
 

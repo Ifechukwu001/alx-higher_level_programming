@@ -2,6 +2,8 @@
 """A module containing a Square class
 
 """
+
+
 class Square:
     """A Square class
 

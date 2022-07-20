@@ -2,6 +2,8 @@
 """A module containing a Node class and a SinglyLinkedList class.
 
 """
+
+
 class Node:
     """A Node class.
 
@@ -46,7 +48,7 @@ class Node:
 
     @next_node.setter
     def next_node(self, value):
-        if value == None or isinstance(value, Node):
+        if value is None or isinstance(value, Node):
             self.__next_node = value
         else:
             raise TypeError("next_node must be a Node object")
@@ -70,28 +72,27 @@ class SinglyLinkedList:
 
         """
         self.__new = Node(value)
-        if self.__head == None:
+        if self.__head is None:
             self.__head = self.__new
-        
+
         elif self.__new.data < self.__head.data:
             self.__new.next_node = self.__head
             self.__head = self.__new
-        
+
         else:
             self.__current = self.__head
-            while (self.__current.next_node):
-                if ((self.__current.data <= self.__new.data) and
-                (self.__new.data <= self.__current.next_node.data)):
+            while self.__current.next_node:
+                if (self.__current.data <= self.__new.data) and
+                (self.__new.data <= self.__current.next_node.data):
                     self.__new.next_node = self.__current.next_node
                     self.__current.next_node = self.__new
                     break
                 self.__current = self.__current.next_node
-                    
-            if self.__current.next_node == None:
+
+            if self.__current.next_node is None:
                 self.__current.next_node = self.__new
             self.__current = None
         self.__new = None
-
 
     def __str__(self):
         """__str___ method of class.

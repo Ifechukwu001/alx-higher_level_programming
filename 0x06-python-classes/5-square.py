@@ -2,6 +2,8 @@
 """A module containing a Square class.
 
 """
+
+
 class Square:
     """Square class.
 
@@ -47,9 +49,9 @@ class Square:
         """my_print method of the Square class.
 
         """
+        if self.__size == 0:
+            print()
         for i in range(self.__size):
             for j in range(self.__size):
                 print("#", end="")
-            print()
-        if self.__size == 0:
             print()
