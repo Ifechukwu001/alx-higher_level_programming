@@ -42,19 +42,16 @@ class Square:
         """:obj: `tuple`: Coordinate of the square.
 
         Raises:
-            TypeError: if position is not a tuple of length 2.
+            TypeError: if position is not a positive tuple of length 2.
 
         """
         return self.__position
 
     @position.setter
     def position(self, value):
-        if isinstance(value, tuple) and len(value) == 2:
+        if (isinstance(value, tuple) and len(value) == 2 and
+            value[0] >= 0 and value[1] >= 0)):
             self.__position = value
-            if self.__position[0] < 0:
-                self.__position = (0, self.__position[1])
-            if self.__position[1] < 0:
-                self.__position = (self.__position[0], 0)
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
         
