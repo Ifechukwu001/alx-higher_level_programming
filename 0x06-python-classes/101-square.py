@@ -1,14 +1,31 @@
 #!/usr/bin/python3
+"""A module containing a Square class.
+
+"""
 class Square:
-    """ Square class with setter and getter to private feild 
-        Also it contains
+    """A Square class.
+
     """
     def __init__(self, size=0, position=(0, 0)):
+        """init method of the class
+
+        Args:
+            size (int): Width of the square.
+            position (:obj:`tuple`): Coordinate of the square.
+
+        """
         self.size = size
         self.position = position
 
     @property
     def size(self):
+        """int: Size of the square.
+
+        Raises:
+            TypeError: if size is not an integer.
+            ValueError: if size is less than zero.
+
+        """
         return self.__size
 
     @size.setter
@@ -21,19 +38,36 @@ class Square:
 
     @property
     def position(self):
+        """:obj:`tuple`: Coordinate of the square.
+
+        Raises:
+            TypeError: if value contains positive values and is of length 2.
+
+        """
         return self.__position
 
     @position.setter
     def position(self, value):
-        if isinstance(value, tuple) and len(value) == 2:
+        if (isinstance(value, tuple) and len(value) == 2
+            and isinstance(value[0], int) and isinstance(value[1], int)
+            and value[0] >= 0 and value[1] >= 0):
             self.__position = value
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
         
     def area(self):
+        """area method of the class.
+
+        Returns:
+            int: area of the square.
+
+        """
         return self.__size * self.__size
 
     def my_print(self):
+        """my_print method of the class.
+
+        """
         if self.__size == 0:
             print()
         else:
@@ -49,6 +83,12 @@ class Square:
                 print()
 
     def __str__(self):
+        """__str__ method of the class.
+
+        Returns:
+            str: String representation of the square.
+
+        """
         self.__str_out = ""
         if self.__size == 0:
             self.__str_out += "\n"
