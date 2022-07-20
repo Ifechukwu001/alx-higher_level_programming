@@ -91,7 +91,7 @@ class Square:
         """
         self.__str_out = ""
         if self.__size == 0:
-            self.__str_out += "\n"
+            pass
         else:
             for i in range(self.__size + self.__position[1]):
                 if i < self.__position[1]:
@@ -102,5 +102,6 @@ class Square:
                         self.__str_out += " "
                     else:
                         self.__str_out += "#"
-                self.__str_out += "\n"
+                if i != (self.__size + self.__position[1]) - 1:
+                    self.__str_out += "\n"
         return self.__str_out
