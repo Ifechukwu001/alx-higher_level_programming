@@ -8,7 +8,7 @@ class MagicClass:
     """A MagicClass class
 
     """
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """init method.
 
         Args:
