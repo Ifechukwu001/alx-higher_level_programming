@@ -1,12 +1,30 @@
 #!/usr/bin/python3
-class Node:
+"""A module containing a Node class and a SinglyLinkedList class.
 
+"""
+class Node:
+    """A Node class.
+
+    """
     def __init__(self, data, next_node=None):
+        """init method of the class.
+
+        Args:
+            data (int): Number data of the node.
+            next_node (:obj:`Node`, optional): Reference to the next node.
+
+        """
         self.data = data
         self.next_node = next_node
 
     @property
     def data(self):
+        """int: data number of the node.
+
+        Raises:
+            TypeError: if data is not an integer.
+
+        """
         return self.__data
 
     @data.setter
@@ -18,6 +36,12 @@ class Node:
 
     @property
     def next_node(self):
+        """:obj:`Node`: Reference to the next node.
+
+        Raises:
+            TypeError: if next_node is not an object of Node or None.
+
+        """
         return self.__next_node
 
     @next_node.setter
@@ -29,11 +53,22 @@ class Node:
 
 
 class SinglyLinkedList:
+    """A SinglyLinkedList class.
 
+    """
     def __init__(self):
+        """init method of the class.
+
+        """
         self.__head = None
 
     def sorted_insert(self, value):
+        """sorted_insert method of the class.
+
+        Args:
+            value (int): Data number of the new node.
+
+        """
         self.__new = Node(value)
         if self.__head == None:
             self.__head = self.__new
@@ -59,6 +94,12 @@ class SinglyLinkedList:
 
 
     def __str__(self):
+        """__str___ method of class.
+
+        Returns:
+            str: String representation of all the nodes in the list.
+
+        """
         self.__str_out = ""
         self.__current = self.__head
         while self.__current:
