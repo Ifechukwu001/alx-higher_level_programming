@@ -82,11 +82,11 @@ class SinglyLinkedList:
         else:
             self.__current = self.__head
             while self.__current.next_node:
-                if (self.__current.data <= self.__new.data) and
-                (self.__new.data <= self.__current.next_node.data):
-                    self.__new.next_node = self.__current.next_node
-                    self.__current.next_node = self.__new
-                    break
+                if self.__current.data <= self.__new.data:
+                    if self.__new.data <= self.__current.next_node.data:
+                        self.__new.next_node = self.__current.next_node
+                        self.__current.next_node = self.__new
+                        break
                 self.__current = self.__current.next_node
 
             if self.__current.next_node is None:
