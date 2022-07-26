@@ -1,0 +1,29 @@
+========================================
+Tests for the function `say_my_name`
+========================================
+
+>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+The function takes the persons full name and out puts an introduction:
+
+>>> say_my_name("John", "Doe")
+My name is John Doe
+>>> say_my_name("Oliver")
+My name is Oliver 
+
+If firstname or last name is not string, it throws a TypeError.
+
+>>> say_my_name(12, "Loe") # doctest: +ELLIPSIS
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+>>> say_my_name("Adam", [34]) # doctest: +ELLIPSIS
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
+>>> say_my_name(None) # doctest: +ELLIPSIS
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
