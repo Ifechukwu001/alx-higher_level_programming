@@ -1,0 +1,39 @@
+====================================
+Tests for ``add_integer``
+===================================
+The ``add_integer function takes two arguments and return their sum.
+
+>>> add_integer = __import__("0-add_integer").add_integer
+>>> add_integer(2, 3)
+5
+
+The function throws a TypeError if none of the argument is an integer or float.
+
+>>> add_integer("aaa", 5) # doctest: +ELLIPSIS
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(3, "opo") # doctest: +ELLIPSIS
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+>>> add_integer(None) # doctest: +ELLIPSIS
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+Also if a or b are floats, they are converted ti integers.
+
+>>> add_integer(2.0, 2.0)
+4
+>>> add_integer(3.142, 5)
+8
+
+Negetive integers are allowed.
+
+>>> add_integer(100, -2)
+98
+>>> add_integer(-3, -4)
+-7
