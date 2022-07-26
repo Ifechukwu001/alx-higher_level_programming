@@ -1,0 +1,44 @@
+=========================================
+Tests for function `print_square`
+=========================================
+
+>>> print_square = __import__("4-print_square").print_square
+
+The function takes a single integer argument and prints a square of length size:
+
+>>> print_square(0)
+
+>>> print_square(4)
+####
+####
+####
+####
+
+
+If size is less than zero, throws an Exception:
+
+>>> print_square(-3) # doctest: +ELLIPSIS
+Traceback (most recent call last):
+    ...
+ValueError: size must be >= 0
+
+
+Also works if float passed is greater than or equals zero:
+
+>>> print_square(3.7)
+###
+###
+###
+
+>>> print_square(-2.2) # doctest: +ELLIPSIS
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+
+If size is not a number, it throws an Exception:
+
+>>> print_square([3]) # doctest: +ELLIPSIS
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
