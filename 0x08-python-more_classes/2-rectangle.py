@@ -72,7 +72,7 @@ class Rectangle:
         """The perimeter of the rectangle
 
         Returns:
-            int: Perimeter of the rectangle, or Zero if height or width is zero.
+            int: Perimeter of the rectangle.
 
         """
         if self.__width == 0 or self.__height == 0:
