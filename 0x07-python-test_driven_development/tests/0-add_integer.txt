@@ -37,3 +37,21 @@ Negetive integers are allowed.
 98
 >>> add_integer(-3, -4)
 -7
+
+For float NaN:
+
+>>> add_integer(float("nan"))
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>> add_integer(2, float('nan'))
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+For Float overflow:
+
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
