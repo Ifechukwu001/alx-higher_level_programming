@@ -17,12 +17,14 @@ Non autem hoc:
 
 
 def text_indentation(text):
+    flag = 0
     if type(text) is not str:
         raise TypeError("text must be a string")
-    words = text.split()
-    for word in words:
-        print("{}".format(word), end="")
-        if word.endswith(":") or word.endswith(".") or word.endswith("?"):
+    for char in text:
+        if char == " " and flag == 1:
+            continue
+        flag = 0
+        print(char, end="")
+        if char == ":" or char == "." or char == "?":
+            flag = 1
             print("\n")
-        elif word is not words[-1]:
-            print(end=" ")
