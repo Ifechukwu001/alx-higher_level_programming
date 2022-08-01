@@ -1,0 +1,19 @@
+=========================================
+Tests for the MyList class
+=========================================
+
+>>> MyList = __import__("1-my_list").MyList
+>>> mylist = MyList()
+
+The MyList is a subclass of the list class
+>>> issubclass(MyList, list)
+True
+
+>>> mylist.extend([2, 3, 1, 5, 4])
+>>> mylist
+[2, 3, 1, 5, 4]
+>>> type(mylist)
+<class '1-my_list.MyList'>
+
+>>> mylist.print_sorted()
+[1, 2, 3, 4, 5]
