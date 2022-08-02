@@ -35,7 +35,6 @@ class BaseGeometry:
             raise ValueError("{} must be greater than 0".format(name))
 
 
-
 class Rectangle(BaseGeometry):
     """A Rectangle class
 
@@ -72,7 +71,6 @@ class Rectangle(BaseGeometry):
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
 
 
-
 class Square(Rectangle):
     """A Square class
 
@@ -96,7 +94,6 @@ class Square(Rectangle):
 
         """
         return self.__size * self.__size
-
 
     def __str__(self):
         """ String representation.

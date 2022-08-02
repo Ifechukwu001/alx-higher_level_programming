@@ -35,7 +35,6 @@ class BaseGeometry:
             raise ValueError("{} must be greater than 0".format(name))
 
 
-
 class Rectangle(BaseGeometry):
     """A Rectangle class
 
@@ -70,7 +69,6 @@ class Rectangle(BaseGeometry):
 
         """
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
-
 
 
 class Square(Rectangle):
