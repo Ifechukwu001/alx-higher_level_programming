@@ -2,11 +2,10 @@
 """Module containing function that serializes an object
 
 """
-import json
 
 
 def class_to_json(obj):
     """Serializes an object
 
     """
-    return json.dumps(obj.__dict__)
+    return obj.__dict__
