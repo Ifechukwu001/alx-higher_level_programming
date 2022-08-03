@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""A module containing function that serializes an object and saves it to a file
+"""A module containing function that \
+serializes an object and saves it to a file
 
 """
 import json
