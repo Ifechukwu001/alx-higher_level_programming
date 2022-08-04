@@ -116,7 +116,21 @@ class Rectangle(Base):
         """ Display method
 
         """
-        for i in range(self.__height):
-            for j in range(self.__width):
-                print("#", end="")
+        for i in range(self.__y + self.__height):
+            if i >= self.__y:
+                for j in range(self.__x + self.__width):
+                    if j < self.__x:
+                        print(" ", end="")
+                    else:
+                        print("#", end="")
             print()
+
+    def __str__(self):
+        """ str magic method
+
+        Returns:
+            str: String representation
+
+        """
+        return "[Rectangle] ({}) {}/{} \
+- {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
