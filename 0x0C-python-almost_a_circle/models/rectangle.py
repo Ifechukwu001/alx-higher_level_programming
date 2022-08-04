@@ -125,17 +125,22 @@ class Rectangle(Base):
                         print("#", end="")
             print()
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ Update method
 
         Args:
             args (:obj:`tuple`): Variable arguments (attributes) to be updated.
+            kwargs ("obj:`dict`): Variable keyword attributes to be updated.
 
         """
         keys = ["id", "_Rectangle__width", "_Rectangle__height",
                 "_Rectangle__x", "_Rectangle__y"]
         for key, arg in zip(keys, args):
             self.__setattr__(key, arg)
+
+        if not args and len(args) == 0:
+            for key, arg in kwargs.items():
+                self.__setattr__(key, arg)
 
     def __str__(self):
         """ str magic method
