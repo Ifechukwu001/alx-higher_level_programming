@@ -34,6 +34,38 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def update(self, *args, **kwargs):
+        """ Update method
+
+        Args:
+            args (:obj:`tuple`): Variable attributes to be updated.
+            kwargs (:obj:`dict`): Variable attributes to be updated.
+
+        """
+        keys = ["id", "size", "x", "y"]
+        for key, arg in zip(keys, args):
+            if key == "id":
+                self.id = arg
+            elif key == "size":
+                self.width = arg
+                self.height = arg
+            elif key == "x":
+                self.x = arg
+            elif key == "y":
+                self.y = arg
+
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "size":
+                    self.width = value
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
+
     def __str__(self):
         """ str magic method
 
