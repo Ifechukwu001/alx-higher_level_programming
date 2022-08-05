@@ -66,6 +66,20 @@ class Square(Rectangle):
                 elif key == "y":
                     self.y = value
 
+    def to_dictionary(self):
+        """ To_dictionary method
+
+        Returns:
+            :obj:`dict`: Dictionary representation of the square.
+
+        """
+        dict_repr = {}
+        dict_repr["id"] = self.id
+        dict_repr["size"] = self.size
+        dict_repr["x"] = self.x
+        dict_repr["y"] = self.y
+        return dict_repr
+
     def __str__(self):
         """ str magic method
 
