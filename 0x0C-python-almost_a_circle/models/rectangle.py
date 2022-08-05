@@ -159,6 +159,21 @@ class Rectangle(Base):
                 elif key == "y":
                     self.y = arg
 
+    def to_dictionary(self):
+        """ To_dictionary method.
+
+        Returns:
+            :obj:`dict`: Dictionary representation of the rectangle.
+
+        """
+        dict_repr = {}
+        dict_repr["id"] = self.id
+        dict_repr["width"] = self.width
+        dict_repr["height"] = self.height
+        dict_repr["x"] = self.x
+        dict_repr["y"] = self.y
+        return dict_repr
+
     def __str__(self):
         """ str magic method
 
