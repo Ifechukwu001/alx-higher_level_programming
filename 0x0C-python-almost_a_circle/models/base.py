@@ -38,3 +38,21 @@ class Base:
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """ Save_to_file method
+
+        Args:
+            list_objs (:obj:`list` of :obj:`Rectangle` or :obj:`Square`): List
+            of Rectangles or Squares.
+
+        """
+        lists = None
+        if len(list_objs) > 0:
+            lists = []
+            for obj in list_objs:
+                lists.append(obj.to_dictionary())
+        filename = "{}.json".format(cls.__name__)
+        with open(filename, mode="w", encoding="utf-8") as outfile:
+            outfile.write(cls.to_json_string(lists))
