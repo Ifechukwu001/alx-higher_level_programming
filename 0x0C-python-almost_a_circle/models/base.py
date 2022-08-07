@@ -39,6 +39,21 @@ class Base:
             return "[]"
         return json.dumps(list_dictionaries)
 
+    @staticmethod
+    def from_json_string(json_string):
+        """ From_json_string method
+
+        Args:
+            json_string (str): Json representation.
+
+        Returns:
+            :obj:`list`: list of dictionary representations.
+
+        """
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
+
     @classmethod
     def save_to_file(cls, list_objs):
         """ Save_to_file method
