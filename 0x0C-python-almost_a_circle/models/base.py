@@ -71,3 +71,22 @@ class Base:
         filename = "{}.json".format(cls.__name__)
         with open(filename, mode="w", encoding="utf-8") as outfile:
             outfile.write(cls.to_json_string(lists))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ Create method
+
+        Args:
+            dictionary (:obj"`dict`): Dictionary containing all the attributes
+                                      of the class.
+
+        Returns:
+            :obj:`Base` or its subclasses: New instance of the class.
+
+        """
+        if cls is Base:
+            instance = cls()
+        else:
+            instance = cls(1, 1)
+            instance.update(**dictionary)
+        return instance
