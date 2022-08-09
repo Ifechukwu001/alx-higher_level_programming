@@ -29,7 +29,8 @@ class Base:
         """ To_json_string method
 
         Args:
-            list_dictionaries (:obj:`list` of :obj:`dict`): List of Dictionaries
+            list_dictionaries (:obj:`list` of :obj:`dict`):
+            List of Dictionaries
 
         Returns:
             str: JSON representation of the list of dictionaries.
@@ -64,13 +65,35 @@ class Base:
 
         """
         lists = None
-        if len(list_objs) > 0:
+        if list_objs and len(list_objs) > 0:
             lists = []
             for obj in list_objs:
                 lists.append(obj.to_dictionary())
         filename = "{}.json".format(cls.__name__)
         with open(filename, mode="w", encoding="utf-8") as outfile:
             outfile.write(cls.to_json_string(lists))
+
+    @classmethod
+    def load_from_file(cls):
+        """ Load_from_file method
+
+        Returns:
+            :obj:`list` of :obj:`cls`: List of the class object in the file.
+
+        """
+        json_repr = None
+        try:
+            filename = "{}.json".format(cls.__name__)
+            with open(filename, encoding="utf-8") as myfile:
+                json_repr = myfile.read()
+        except FileNotFoundError:
+            return []
+        obj_repr = json.loads(json_repr)
+        objs = []
+        for dict_repr in obj_repr:
+            obj = cls.create(**dict_repr)
+            objs.append(obj)
+        return objs
 
     @classmethod
     def create(cls, **dictionary):
