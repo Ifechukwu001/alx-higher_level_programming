@@ -16,7 +16,7 @@ Non autem hoc:
 """
 
 
-def text_indentation(text):
+def text_indentation(text=None):
     flag = 0
     if type(text) is not str:
         raise TypeError("text must be a string")

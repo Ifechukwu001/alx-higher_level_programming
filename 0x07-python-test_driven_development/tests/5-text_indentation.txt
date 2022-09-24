@@ -45,7 +45,7 @@ Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
 
 If text is not a string, throw an Exception:
 
->>> text_indentation(12) 
+>>> text_indentation(12)
 Traceback (most recent call last):
     ...
 TypeError: text must be a string
@@ -53,4 +53,10 @@ TypeError: text must be a string
 >>> text_indentation(["rat", "mouse", "hamster"])
 Traceback (most recent call last):
     ...
+TypeError: text must be a string
+
+
+>>> text_indentation()
+Traceback (most recent call last):
+...
 TypeError: text must be a string
