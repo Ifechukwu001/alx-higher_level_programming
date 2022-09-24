@@ -25,3 +25,11 @@ class TestMaxInteger(unittest.TestCase):
     def test_max_all_minus(self):
         list = [-1, -4, -9, -5, -7]
         self.assertEqual(max_integer(list), -1)
+
+    def test_max_one(self):
+        list = [6]
+        self.assertEqual(max_integer(list), 6)
+
+    def test_max_none(self):
+        list = []
+        self.assertEqual(max_integer(list), None)
