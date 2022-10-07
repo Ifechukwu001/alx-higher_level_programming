@@ -1,5 +1,6 @@
 #!/usr/bin/node
-const { argv } = require('node:process');
+//const { argv } = require('node:process');
+import { argv } from 'node:process';
 
 const argvLen = argv.length - 2;
 
