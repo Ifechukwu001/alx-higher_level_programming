@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""Module that connects to a MySQL server and retrieves information
+from the database.
+"""
 import MySQLdb
 from sys import argv
 
