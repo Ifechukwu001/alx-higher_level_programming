@@ -1,5 +1,5 @@
 #!/usr/bin/node
-/* Writes a string to a file */
+// Writes a string to a file
 
 const { writeFile } = require('node:fs');
 const { argv } = require('node:process');

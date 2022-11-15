@@ -1,7 +1,7 @@
 #!/usr/bin/node
 /* Ouputs content of a file. */
 
-const fs = require('fs');
+const fs = require('node:fs');
 const { argv } = require('node:process');
 
 const filename = argv[2];
