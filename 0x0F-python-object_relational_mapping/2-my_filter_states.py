@@ -18,7 +18,7 @@ if __name__ == "__main__":
                          db=data_base)
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states WHERE states.name = %s ORDER BY states.id", search_name)
+    cursor.execute("SELECT * FROM states WHERE CONVERT(`name` USING Latin1) COLLATE Latin1_General_CS = '%s';", search_name)
     states = cursor.fetchall()
     for state in states:
         print(state)
